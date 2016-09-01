@@ -7,15 +7,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.app.sample.messenger.adapter.PageFragmentAdapter;
 import com.app.sample.messenger.data.Tools;
-import com.app.sample.messenger.fragment.PageCallFragment;
-import com.app.sample.messenger.fragment.PageFriendFragment;
-import com.app.sample.messenger.fragment.PageGroupFragment;
-import com.app.sample.messenger.fragment.PageRecentFragment;
+import com.app.sample.messenger.fragment.PageMapFragment;
+import com.app.sample.messenger.fragment.PageServicesFragment;
+import com.app.sample.messenger.fragment.PageEmergencyContactsFragment;
 import com.app.sample.messenger.fragment.PageSettingFragment;
+import com.app.sample.messenger.fragment.PageUserInfoFragment;
 
 public class ActivityMain extends AppCompatActivity {
     private TabLayout tabLayout;
@@ -26,11 +25,11 @@ public class ActivityMain extends AppCompatActivity {
 
     private PageFragmentAdapter adapter;
 
-    private PageRecentFragment f_recent;
-    private PageCallFragment f_call;
-    private PageGroupFragment f_group;
-    private PageFriendFragment f_friend;
-    private PageSettingFragment f_setting;
+    private PageSettingFragment f_recent;
+    private PageMapFragment f_call;
+    private PageEmergencyContactsFragment f_group;
+    private PageServicesFragment f_friend;
+    private PageUserInfoFragment f_setting;
     private static int[] imageResId = {
             R.drawable.ic_tab_recent,
             R.drawable.ic_tab_call,
@@ -86,19 +85,19 @@ public class ActivityMain extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         adapter = new PageFragmentAdapter(getSupportFragmentManager());
         if (f_recent == null) {
-            f_recent = new PageRecentFragment();
+            f_recent = new PageSettingFragment();
         }
         if (f_call == null) {
-            f_call = new PageCallFragment();
+            f_call = new PageMapFragment();
         }
         if (f_group== null) {
-            f_group = new PageGroupFragment();
+            f_group = new PageEmergencyContactsFragment();
         }
         if (f_friend == null) {
-            f_friend = new PageFriendFragment();
+            f_friend = new PageServicesFragment();
         }
         if (f_setting == null) {
-            f_setting = new PageSettingFragment();
+            f_setting = new PageUserInfoFragment();
         }
         adapter.addFragment(f_recent, getString(R.string.tab_recent));
         adapter.addFragment(f_call, getString(R.string.tab_call));

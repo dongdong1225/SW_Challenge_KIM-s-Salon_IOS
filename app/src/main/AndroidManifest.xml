@@ -8,6 +8,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCYj0C-HtXbNTN_dk5YY8ER4qqiDaKFO84" />
         <activity android:name=".ActivityMain"/>
         <activity android:name=".ActivityChatDetails" />
         <activity android:name=".ActivityCalling" />
