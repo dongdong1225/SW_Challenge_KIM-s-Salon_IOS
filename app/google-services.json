@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "245538273182",
+    "project_id": "firebase-saluto"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245538273182:android:19657bc65d34387d",
+        "android_client_info": {
+          "package_name": "com.app.sample.messenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI6adrR6vo8Mvqpc2J61Xmo3hyOd5ItjQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
