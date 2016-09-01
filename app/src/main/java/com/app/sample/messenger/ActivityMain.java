@@ -9,6 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.app.sample.messenger.adapter.PageFragmentAdapter;
 import com.app.sample.messenger.data.Tools;
@@ -23,6 +24,10 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
+
+import java.util.ArrayList;
 
 public class ActivityMain extends AppCompatActivity implements OnMapReadyCallback {
     private TabLayout tabLayout;
@@ -53,6 +58,25 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PermissionListener permissionlistener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                Toast.makeText(ActivityMain.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                Toast.makeText(ActivityMain.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+        };
+        new TedPermission(this)
+                .setPermissionListener(permissionlistener)
+                .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+                .setPermissions(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.SEND_SMS, android.Manifest.permission.RECEIVE_SMS, android.Manifest.permission.READ_PHONE_STATE)
+                .check();
+
         parent_view = findViewById(R.id.viewpager);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -66,6 +90,8 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
         onFabClick();
 
         // for system bar in lollipop
+
+
 
     }
 
@@ -176,6 +202,11 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
+
+
+
 }
+
+
 
 
