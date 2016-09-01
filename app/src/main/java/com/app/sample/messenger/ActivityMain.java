@@ -1,9 +1,11 @@
 package com.app.sample.messenger;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,8 +17,14 @@ import com.app.sample.messenger.fragment.PageServicesFragment;
 import com.app.sample.messenger.fragment.PageEmergencyContactsFragment;
 import com.app.sample.messenger.fragment.PageSettingFragment;
 import com.app.sample.messenger.fragment.PageUserInfoFragment;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 
-public class ActivityMain extends AppCompatActivity {
+public class ActivityMain extends AppCompatActivity implements OnMapReadyCallback {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
@@ -38,6 +46,9 @@ public class ActivityMain extends AppCompatActivity {
             R.drawable.ic_tab_setting
     };
 
+    private LatLngBounds AUSTRALIA = new LatLngBounds(
+            new LatLng(-44, 113), new LatLng(-10, 154));
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +66,7 @@ public class ActivityMain extends AppCompatActivity {
         onFabClick();
 
         // for system bar in lollipop
-        Tools.systemBarLolipop(this);
+
     }
 
     private void onFabClick() {
@@ -89,8 +100,9 @@ public class ActivityMain extends AppCompatActivity {
         }
         if (f_call == null) {
             f_call = new PageMapFragment();
+
         }
-        if (f_group== null) {
+        if (f_group == null) {
             f_group = new PageEmergencyContactsFragment();
         }
         if (f_friend == null) {
@@ -120,9 +132,9 @@ public class ActivityMain extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
-                if(position == 4){//tab setting
+                if (position == 4) {//tab setting
                     fab.hide();
-                }else{
+                } else {
                     fab.show();
                 }
                 viewPager.setCurrentItem(position);
@@ -141,4 +153,29 @@ public class ActivityMain extends AppCompatActivity {
     public void actionClick(View v) {
         f_setting.actionClick(v);
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(AUSTRALIA, 0));
+        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        googleMap.setMyLocationEnabled(true);
+        googleMap.setTrafficEnabled(true);
+        googleMap.setIndoorEnabled(true);
+        googleMap.setBuildingsEnabled(true);
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
+    }
+
+
 }
+
+

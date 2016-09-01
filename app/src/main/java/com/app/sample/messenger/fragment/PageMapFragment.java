@@ -1,7 +1,10 @@
 package com.app.sample.messenger.fragment;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.app.sample.messenger.R;
 import com.app.sample.messenger.adapter.CallListAdapter;
@@ -16,13 +20,18 @@ import com.app.sample.messenger.adapter.ChatsListAdapter;
 import com.app.sample.messenger.data.Constant;
 import com.app.sample.messenger.model.Chat;
 import com.app.sample.messenger.model.Friend;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PageMapFragment extends Fragment {
+public class PageMapFragment extends Fragment implements OnMapReadyCallback {
 
     private View view;
 
@@ -33,8 +42,15 @@ public class PageMapFragment extends Fragment {
     private GoogleMap _map;
 
     MapView mapView;
-    GoogleMap map;
+    public GoogleMap map;
     protected MapView mMapView;
+
+    private LatLngBounds AUSTRALIA = new LatLngBounds(
+            new LatLng(-44, 113), new LatLng(-10, 154));
+
+// Set the camera to the greatest possible zoom level that includes the
+// bounds
+
 
     @Override
     public void onResume() {
@@ -85,7 +101,25 @@ public class PageMapFragment extends Fragment {
         View view = inflater.inflate(R.layout.mapview_fragment, parent, false);
         mMapView = (MapView) view.findViewById(R.id.map);
         mMapView.onCreate(savedInstanceState);
+
+        mMapView.getMapAsync(this);
+
         return view;
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(AUSTRALIA, 0));
+        //googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+        googleMap.setTrafficEnabled(true);
+        googleMap.setIndoorEnabled(true);
+        googleMap.setBuildingsEnabled(true);
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
+        googleMap.setMyLocationEnabled(true);
+
+    }
+
 
 }
