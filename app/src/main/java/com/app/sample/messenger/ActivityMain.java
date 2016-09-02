@@ -4,32 +4,25 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
+
 
 import com.app.sample.messenger.adapter.PageFragmentAdapter;
-import com.app.sample.messenger.data.Tools;
 import com.app.sample.messenger.fragment.PageMapFragment;
 import com.app.sample.messenger.fragment.PageServicesFragment;
 import com.app.sample.messenger.fragment.PageEmergencyContactsFragment;
 import com.app.sample.messenger.fragment.PageSettingFragment;
 import com.app.sample.messenger.fragment.PageUserInfoFragment;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -53,6 +46,7 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
 
     private PageSettingFragment f_recent;
     private PageMapFragment f_call;
+    //private LaunchTimeTestFragment f_call;
     private PageEmergencyContactsFragment f_group;
     private PageServicesFragment f_friend;
     private PageUserInfoFragment f_setting;
@@ -63,6 +57,7 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
             R.drawable.ic_tab_friends,
             R.drawable.ic_tab_setting
     };
+
 
     //이하 영마가 추가
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -245,7 +240,7 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
         }
         if (f_call == null) {
             f_call = new PageMapFragment();
-
+            //f_call = new LaunchTimeTestFragment();
         }
         if (f_group == null) {
             f_group = new PageEmergencyContactsFragment();
@@ -257,6 +252,7 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
             f_setting = new PageUserInfoFragment();
         }
         adapter.addFragment(f_recent, getString(R.string.tab_recent));
+        //adapter.addFragment(f_call, getString(R.string.tab_call));
         adapter.addFragment(f_call, getString(R.string.tab_call));
         adapter.addFragment(f_group, getString(R.string.tab_group));
         adapter.addFragment(f_friend, getString(R.string.tab_friend));
