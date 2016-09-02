@@ -13,23 +13,30 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
+import android.widget.Toast;
+
 
 import com.app.sample.messenger.adapter.PageFragmentAdapter;
-import com.app.sample.messenger.data.Tools;
 import com.app.sample.messenger.fragment.PageMapFragment;
 import com.app.sample.messenger.fragment.PageServicesFragment;
 import com.app.sample.messenger.fragment.PageEmergencyContactsFragment;
 import com.app.sample.messenger.fragment.PageSettingFragment;
 import com.app.sample.messenger.fragment.PageUserInfoFragment;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 import com.app.sample.messenger.gcm.QuickstartPreferences;
 import com.app.sample.messenger.gcm.RegistrationIntentService;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-public class ActivityMain extends AppCompatActivity {
+
+import java.util.ArrayList;
+
+public class ActivityMain extends AppCompatActivity implements OnMapReadyCallback {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
@@ -40,6 +47,7 @@ public class ActivityMain extends AppCompatActivity {
 
     private PageSettingFragment f_recent;
     private PageMapFragment f_call;
+    //private LaunchTimeTestFragment f_call;
     private PageEmergencyContactsFragment f_group;
     private PageServicesFragment f_friend;
     private PageUserInfoFragment f_setting;
@@ -50,6 +58,7 @@ public class ActivityMain extends AppCompatActivity {
             R.drawable.ic_local_library_white_24dp,
             R.drawable.ic_account_circle_white_24dp
     };
+
 
     //이하 영마가 추가
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -104,10 +113,32 @@ public class ActivityMain extends AppCompatActivity {
         };
     }
 
+    private LatLngBounds AUSTRALIA = new LatLngBounds(
+            new LatLng(-44, 113), new LatLng(-10, 154));
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PermissionListener permissionlistener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                Toast.makeText(ActivityMain.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                Toast.makeText(ActivityMain.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+        };
+        new TedPermission(this)
+                .setPermissionListener(permissionlistener)
+                .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+                .setPermissions(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.SEND_SMS, android.Manifest.permission.RECEIVE_SMS, android.Manifest.permission.READ_PHONE_STATE)
+                .check();
+
 
         registBroadcastReceiver();
         getInstanceIdToken();
@@ -124,8 +155,12 @@ public class ActivityMain extends AppCompatActivity {
         setupTabClick();
         onFabClick();
 
+        fab.hide();
+
         // for system bar in lollipop
-        Tools.systemBarLolipop(this);
+
+
+
     }
 
     /**
@@ -206,8 +241,9 @@ public class ActivityMain extends AppCompatActivity {
         }
         if (f_call == null) {
             f_call = new PageMapFragment();
+            //f_call = new LaunchTimeTestFragment();
         }
-        if (f_group== null) {
+        if (f_group == null) {
             f_group = new PageEmergencyContactsFragment();
         }
         if (f_friend == null) {
@@ -217,6 +253,7 @@ public class ActivityMain extends AppCompatActivity {
             f_setting = new PageUserInfoFragment();
         }
         adapter.addFragment(f_recent, getString(R.string.tab_recent));
+        //adapter.addFragment(f_call, getString(R.string.tab_call));
         adapter.addFragment(f_call, getString(R.string.tab_call));
         adapter.addFragment(f_group, getString(R.string.tab_group));
         adapter.addFragment(f_friend, getString(R.string.tab_friend));
@@ -237,10 +274,10 @@ public class ActivityMain extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
-                if(position == 4){//tab setting
-                    fab.hide();
-                }else{
+                if (position == 2) {//tab setting
                     fab.show();
+                } else {
+                    fab.hide();
                 }
                 viewPager.setCurrentItem(position);
             }
@@ -258,4 +295,34 @@ public class ActivityMain extends AppCompatActivity {
     public void actionClick(View v) {
         f_setting.actionClick(v);
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(AUSTRALIA, 0));
+//        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+//        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+//            return;
+//        }
+//        googleMap.setMyLocationEnabled(true);
+//        googleMap.setTrafficEnabled(true);
+//        googleMap.setIndoorEnabled(true);
+//        googleMap.setBuildingsEnabled(true);
+//        googleMap.getUiSettings().setZoomControlsEnabled(true);
+    }
+
+
+
+
+
 }
+
+
+
+
