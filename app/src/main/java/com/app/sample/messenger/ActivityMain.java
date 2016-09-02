@@ -1,6 +1,8 @@
 package com.app.sample.messenger;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -40,7 +42,11 @@ import com.app.sample.messenger.gcm.RegistrationIntentService;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
+import java.io.InputStream;
 import java.util.ArrayList;
+
+import jxl.Sheet;
+import jxl.Workbook;
 
 public class ActivityMain extends AppCompatActivity implements OnMapReadyCallback {
     private TabLayout tabLayout;
@@ -125,6 +131,7 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         PermissionListener permissionlistener = new PermissionListener() {
             @Override
             public void onPermissionGranted() {
@@ -161,6 +168,7 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
 
         // for system bar in lollipop
 
+        readXLSX();
 
 
     }
@@ -319,7 +327,54 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
+    public void readXLSX()
+    {
 
+        Workbook workbook = null;
+        Sheet sheet = null;
+
+        try {
+            InputStream is = getBaseContext().getResources().getAssets().open("incheon.xls");
+            workbook = Workbook.getWorkbook(is);
+
+            if (workbook != null) {
+                Log.e("xlsx", "work book");
+                sheet = workbook.getSheet(0);
+
+                if (sheet != null)
+                {
+
+                    int nMaxColumn = 2;
+                    int nRowStartIndex = 0;
+                    int nRowEndIndex = sheet.getColumn(nMaxColumn - 1).length - 1;
+                    int nColumnStartIndex = 0;
+                    int nColumnEndIndex = sheet.getRow(2).length - 1;
+
+                    for (int nRow = nRowStartIndex; nRow <= nRowEndIndex; nRow++) {
+                        String cctv_id = sheet.getCell(nColumnStartIndex, nRow).getContents();
+                        String cctv_address = sheet.getCell(nColumnStartIndex + 1, nRow).getContents();
+                        String cctv_contact = sheet.getCell(nColumnStartIndex + 2, nRow).getContents();
+                        String cctv_latitude = sheet.getCell(nColumnStartIndex + 3, nRow).getContents();
+                        String cctv_logitude = sheet.getCell(nColumnStartIndex + 4, nRow).getContents();
+                    }
+                }
+                else
+                {
+                    Log.e("excel","Sheet is null!!");
+                }
+            }
+            else
+            {
+                Log.e("excel","Workbook is null!!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (workbook != null) {
+                workbook.close();
+            }
+        }
+    }
 
 
 }
