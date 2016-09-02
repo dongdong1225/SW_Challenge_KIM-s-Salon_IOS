@@ -21,6 +21,7 @@ import com.app.sample.messenger.R;
 import com.app.sample.messenger.adapter.CallListAdapter;
 import com.app.sample.messenger.adapter.ChatsListAdapter;
 import com.app.sample.messenger.data.Constant;
+import com.app.sample.messenger.data.DangerPlace;
 import com.app.sample.messenger.model.Chat;
 import com.app.sample.messenger.model.Friend;
 import com.google.android.gms.location.LocationListener;
@@ -30,10 +31,12 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.clustering.ClusterManager;
 
 
 import java.util.ArrayList;
@@ -53,6 +56,7 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap _map;
 
 
+    public ClusterManager<DangerPlace> mClusterManger;
     MapView mapView;
     public GoogleMap map;
     protected MapView mMapView;
@@ -71,6 +75,8 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
     public static final int CLUSTERING_ENABLED_DYNAMIC = 3;
 
     private static final int MARKERS_COUNT = 20000;
+
+    CameraPosition mPreviousCameraPosition = null;
 
 // Set the camera to the greatest possible zoom level that includes the
 // bounds
@@ -165,9 +171,23 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
         }
         googleMap.setMyLocationEnabled(true);
 
-        //ClusterManager
 
+
+        mClusterManger = new ClusterManager<>(this.getContext(),googleMap);
+        //map.setOnMapClickListener( mClusterManger);
+        //googleMap.setOnCameraChangeListener(mClusterManger);
         googleMap.setOnMyLocationChangeListener(myLocationChangeListener());
+
+        map.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+            @Override
+            public void onCameraIdle() {
+                CameraPosition position = map.getCameraPosition();
+                if(mPreviousCameraPosition == null || mPreviousCameraPosition.zoom != position.zoom) {
+                    mPreviousCameraPosition = map.getCameraPosition();
+                    mClusterManger.cluster();
+                }
+            }
+        });
         //map = SupportMapFragment.newInstance().getExtendedMap();
         //setUpMap();
 
@@ -185,7 +205,9 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
                 //com.androidmapsextensions.MarkerOptions options = new com.androidmapsextensions.MarkerOptions();
                 //marker = map.addMarker(options.position(loc));
                 marker = map.addMarker(new MarkerOptions().position(loc));
+                mClusterManger.addItem(new DangerPlace(loc));
                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
+
                 //locationText.setText("You are at [" + longitude + " ; " + latitude + " ]");
 
                 //get current address by invoke an AsyncTask object
