@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/dongheelee/Desktop/해커톤/Saluto/library/src/main/shaders"/></dataSet><dataSet config="release"><source path="/Users/dongheelee/Desktop/해커톤/Saluto/library/src/release/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\duddu\Desktop\Hackerton\Saluto_android2\library\src\main\shaders"/></dataSet><dataSet config="release"><source path="C:\Users\duddu\Desktop\Hackerton\Saluto_android2\library\src\release\shaders"/></dataSet></merger>
