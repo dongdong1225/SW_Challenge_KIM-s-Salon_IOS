@@ -1,8 +1,12 @@
 package com.app.sample.messenger.fragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -13,23 +17,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import com.app.sample.messenger.R;
 import com.app.sample.messenger.adapter.CallListAdapter;
 import com.app.sample.messenger.adapter.ChatsListAdapter;
 import com.app.sample.messenger.data.Constant;
+import com.app.sample.messenger.data.DangerPlace;
 import com.app.sample.messenger.model.Chat;
 import com.app.sample.messenger.model.Friend;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.clustering.ClusterManager;
+
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Random;
+
 
 public class PageMapFragment extends Fragment implements OnMapReadyCallback {
 
@@ -41,12 +55,28 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap _map;
 
+
+    public ClusterManager<DangerPlace> mClusterManger;
     MapView mapView;
     public GoogleMap map;
     protected MapView mMapView;
 
+    protected LocationManager mLocationManager;
+
     private LatLngBounds AUSTRALIA = new LatLngBounds(
             new LatLng(-44, 113), new LatLng(-10, 154));
+
+    //private static final String TAG = LaunchTimeTestFragment.class.getSimpleName();
+
+    private static final String EXTRA_CLUSTERING_TYPE = "clusteringType";
+    public static final int CLUSTERING_DISABLED = 0;
+    public static final int CLUSTERING_DISABLED_DYNAMIC = 1;
+    public static final int CLUSTERING_ENABLED = 2;
+    public static final int CLUSTERING_ENABLED_DYNAMIC = 3;
+
+    private static final int MARKERS_COUNT = 20000;
+
+    CameraPosition mPreviousCameraPosition = null;
 
 // Set the camera to the greatest possible zoom level that includes the
 // bounds
@@ -99,7 +129,7 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mapview_fragment, parent, false);
-        mMapView = (MapView) view.findViewById(R.id.map);
+        mMapView = (MapView) view.findViewById(R.id.map_container);
         mMapView.onCreate(savedInstanceState);
 
         mMapView.getMapAsync(this);
@@ -107,11 +137,23 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
         return view;
     }
 
+    private final LocationListener mLocationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(final Location location) {
+            //your code here
+        }
+    };
+
+
+
+
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(com.google.android.gms.maps.GoogleMap googleMap) {
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(AUSTRALIA, 0));
         //googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+        map = googleMap;
 
         googleMap.setTrafficEnabled(true);
         googleMap.setIndoorEnabled(true);
@@ -129,7 +171,53 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
         }
         googleMap.setMyLocationEnabled(true);
 
+
+
+        mClusterManger = new ClusterManager<>(this.getContext(),googleMap);
+        //map.setOnMapClickListener( mClusterManger);
+        //googleMap.setOnCameraChangeListener(mClusterManger);
+        googleMap.setOnMyLocationChangeListener(myLocationChangeListener());
+
+        map.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+            @Override
+            public void onCameraIdle() {
+                CameraPosition position = map.getCameraPosition();
+                if(mPreviousCameraPosition == null || mPreviousCameraPosition.zoom != position.zoom) {
+                    mPreviousCameraPosition = map.getCameraPosition();
+                    mClusterManger.cluster();
+                }
+            }
+        });
+        //map = SupportMapFragment.newInstance().getExtendedMap();
+        //setUpMap();
+
+    }
+
+    private GoogleMap.OnMyLocationChangeListener myLocationChangeListener() {
+        return new GoogleMap.OnMyLocationChangeListener() {
+            @Override
+            public void onMyLocationChange(Location location) {
+                LatLng loc = new LatLng(location.getLatitude(), location.getLongitude());
+                double longitude = location.getLongitude();
+                double latitude = location.getLatitude();
+
+                Marker marker;
+                //com.androidmapsextensions.MarkerOptions options = new com.androidmapsextensions.MarkerOptions();
+                //marker = map.addMarker(options.position(loc));
+                marker = map.addMarker(new MarkerOptions().position(loc));
+                mClusterManger.addItem(new DangerPlace(loc));
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
+
+                //locationText.setText("You are at [" + longitude + " ; " + latitude + " ]");
+
+                //get current address by invoke an AsyncTask object
+               // new GetAddressTask(LocationActivity.this).execute(String.valueOf(latitude), String.valueOf(longitude));
+            }
+        };
     }
 
 
+
 }
+
+
