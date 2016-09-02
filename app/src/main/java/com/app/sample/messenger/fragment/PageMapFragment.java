@@ -1,7 +1,10 @@
 package com.app.sample.messenger.fragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -20,6 +23,7 @@ import com.app.sample.messenger.adapter.ChatsListAdapter;
 import com.app.sample.messenger.data.Constant;
 import com.app.sample.messenger.model.Chat;
 import com.app.sample.messenger.model.Friend;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -27,6 +31,8 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +50,8 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
     MapView mapView;
     public GoogleMap map;
     protected MapView mMapView;
+
+    protected LocationManager mLocationManager;
 
     private LatLngBounds AUSTRALIA = new LatLngBounds(
             new LatLng(-44, 113), new LatLng(-10, 154));
@@ -107,12 +115,20 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
         return view;
     }
 
+    private final LocationListener mLocationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(final Location location) {
+            //your code here
+        }
+    };
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(AUSTRALIA, 0));
         //googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
+        map = googleMap;
         googleMap.setTrafficEnabled(true);
         googleMap.setIndoorEnabled(true);
         googleMap.setBuildingsEnabled(true);
@@ -129,7 +145,32 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
         }
         googleMap.setMyLocationEnabled(true);
 
+        googleMap.setOnMyLocationChangeListener(myLocationChangeListener());
+
+    }
+
+    private GoogleMap.OnMyLocationChangeListener myLocationChangeListener() {
+        return new GoogleMap.OnMyLocationChangeListener() {
+            @Override
+            public void onMyLocationChange(Location location) {
+                LatLng loc = new LatLng(location.getLatitude(), location.getLongitude());
+                double longitude = location.getLongitude();
+                double latitude = location.getLatitude();
+
+                Marker marker;
+                marker = map.addMarker(new MarkerOptions().position(loc));
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
+                //locationText.setText("You are at [" + longitude + " ; " + latitude + " ]");
+
+                //get current address by invoke an AsyncTask object
+               // new GetAddressTask(LocationActivity.this).execute(String.valueOf(latitude), String.valueOf(longitude));
+            }
+        };
     }
 
 
+
+
 }
+
+
