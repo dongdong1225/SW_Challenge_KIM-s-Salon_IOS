@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 public class ActivityCalling extends AppCompatActivity {
 
-    public static String KEY_FRIEND     = "com.app.sample.messenger.FRIEND";
+    public static String KEY_FRIEND = "com.app.sample.messenger.FRIEND";
 
     private Friend friend;
     private View parent_view;

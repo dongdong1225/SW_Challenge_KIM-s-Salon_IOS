@@ -46,7 +46,7 @@ public class Group implements Serializable {
     }
     public String getMember() {
         if (friends.size() > 100) {
-            return "100+ sembers";
+            return "100+ members";
         }
         return (friends.size() + 1) + " members";
     }

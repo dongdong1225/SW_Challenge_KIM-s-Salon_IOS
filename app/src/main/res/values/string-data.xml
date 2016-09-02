@@ -68,21 +68,21 @@
     </string-array>
 
     <string-array name="groups_name">
-        <item>Collage</item>
-        <item>Hangout Friends</item>
-        <item>Cat Lovers</item>
+        <item>여성긴급전화1366</item>
+        <item>한국성폭력상담소</item>
+        <item>해바라기센터</item>
     </string-array>
 
     <string-array name="groups_date">
-        <item>10 Days ago</item>
-        <item>Today</item>
-        <item>Yesterday</item>
+        <item>전화번호 : 지역번호 + 1366</item>
+        <item>전화번호 : 02 - 338 - 5801</item>
+        <item>전화번호 : 02 - 3274 - 1375</item>
     </string-array>
 
     <integer-array name="groups_photos">
-        <item>@drawable/ic_group_collage</item>
-        <item>@drawable/ic_group_hangout</item>
-        <item>@drawable/ic_group_catlovers</item>
+        <item>@drawable/ex3</item>
+        <item>@drawable/ex4</item>
+        <item>@drawable/ex5</item>
     </integer-array>
 
     <string-array name="chat_details_content">

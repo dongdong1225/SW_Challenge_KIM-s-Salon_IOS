@@ -44,11 +44,11 @@ public class ActivityMain extends AppCompatActivity {
     private PageServicesFragment f_friend;
     private PageUserInfoFragment f_setting;
     private static int[] imageResId = {
-            R.drawable.ic_tab_recent,
-            R.drawable.ic_tab_call,
-            R.drawable.ic_tab_group,
-            R.drawable.ic_tab_friends,
-            R.drawable.ic_tab_setting
+            R.drawable.ic_power_settings_new_white_24dp,
+            R.drawable.ic_location_on_white_24dp,
+            R.drawable.ic_call_white_24dp,
+            R.drawable.ic_local_library_white_24dp,
+            R.drawable.ic_account_circle_white_24dp
     };
 
     //이하 영마가 추가
