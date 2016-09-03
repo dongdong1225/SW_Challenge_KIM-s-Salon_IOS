@@ -1,17 +1,20 @@
 package com.app.sample.messenger.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.sample.messenger.R;
 import com.app.sample.messenger.model.Group;
@@ -31,12 +34,17 @@ public class GroupsGridAdapter extends RecyclerView.Adapter<GroupsGridAdapter.Vi
 
     // for item click listener
     private OnItemClickListener mOnItemClickListener;
+//    private OnItemLongClickListener mOnItemLongClickListener;
     public interface OnItemClickListener {
         void onItemClick(View view, Group obj, int position);
     }
     public void setOnItemClickListener(final OnItemClickListener mItemClickListener) {
         this.mOnItemClickListener = mItemClickListener;
     }
+
+//    public interface OnItemLongClickListener {
+//        void OnItemLongClick(AdapterView<?> arg0, View arg1, int pos, long arg3);
+//    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
@@ -98,6 +106,7 @@ public class GroupsGridAdapter extends RecyclerView.Adapter<GroupsGridAdapter.Vi
                 }
             }
         });
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)

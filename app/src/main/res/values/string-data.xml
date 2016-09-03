@@ -49,6 +49,7 @@
         <item>해바라기센터</item>
         <item>한국여성의전화</item>
         <item>경찰청</item>
+        <item>성희롱예방센터</item>
     </string-array>
 
     <string-array name="groups_date">
@@ -57,6 +58,7 @@
         <item>전화번호 : 02 - 3274 - 1375</item>
         <item>전화번호 : 02 - 3156 - 5499</item>
         <item>전화번호 : 112</item>
+        <item>전화번호 : 02 - 444 - 4050</item>
     </string-array>
 
     <integer-array name="groups_photos">
@@ -65,6 +67,7 @@
         <item>@drawable/ex3</item>
         <item>@drawable/ex4</item>
         <item>@drawable/ex5</item>
+        <item>@drawable/ex6</item>
     </integer-array>
 
     <string-array name="chat_details_content">
@@ -85,12 +88,11 @@
         <item>안녕하십니까, 해바라기센터입니다. 무엇을 도와드릴까요?</item>
         <item>안녕하십니까, 한국여성의전화입니다. 무엇을 도와드릴까요?</item>
         <item>안녕하십니까, 경찰청입니다. 무엇을 도와드릴까요?</item>
+        <item>안녕하십니까, 성희롱예방센터입니다. 무엇을 도와드릴까요?</item>
     </string-array>
 
     <string-array name="group_details_content">
         <item>안녕하십니까, 여성긴급전화 1366입니다. 무엇을 도와드릴까요?</item>
-        <item>안녕하십니까, 222222222222. 무엇을 도와드릴까요?</item>
-        <item>안녕하십니까, 333333333333. 무엇을 도와드릴까요?</item>
 
     </string-array>
 
@@ -100,6 +102,7 @@
         <item>서울시 마포구 신수동 63-14번지 7층</item>
         <item>서울시 은평구 진흥로16길 8-4</item>
         <item>서울시 서대문구 통일로 97 경찰청</item>
+        <item>서울시 강남구 선릉로 670 해운빌딩</item>
     </string-array>
 
     <string-array name="group_details_date">

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Group implements Serializable {
-    private long id;
+    private int id;
     private String date;
     private String name;
     private String snippet;
@@ -13,7 +13,7 @@ public class Group implements Serializable {
     private int photo;
     private ArrayList<Friend> friends = new ArrayList<>();
 
-    public Group(long id, String date, String name, String snippet, String address, int photo) {
+    public Group(int id, String date, String name, String snippet, String address, int photo) {
         this.id = id;
         this.date = date;
         this.name = name;
@@ -22,7 +22,7 @@ public class Group implements Serializable {
         this.photo = photo;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
