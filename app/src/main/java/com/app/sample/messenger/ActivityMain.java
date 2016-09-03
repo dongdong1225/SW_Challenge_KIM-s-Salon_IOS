@@ -1,6 +1,8 @@
 package com.app.sample.messenger;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 
 import com.app.sample.messenger.adapter.PageFragmentAdapter;
+import com.app.sample.messenger.cctv_DB.NotesDbAdapter;
 import com.app.sample.messenger.fragment.PageMapFragment;
 import com.app.sample.messenger.fragment.PageServicesFragment;
 import com.app.sample.messenger.fragment.PageEmergencyContactsFragment;
@@ -33,8 +36,12 @@ import com.app.sample.messenger.gcm.RegistrationIntentService;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
+import java.io.InputStream;
 
 import java.util.ArrayList;
+
+import jxl.Sheet;
+import jxl.Workbook;
 
 public class ActivityMain extends AppCompatActivity implements OnMapReadyCallback {
     private TabLayout tabLayout;
@@ -67,7 +74,10 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
     //private Button mRegistrationButton;
     //private ProgressBar mRegistrationProgressBar;
     private BroadcastReceiver mRegistrationBroadcastReceiver;
+    private static final String DB_TAG = "NotesDbAdapter";
     //private EditText mInformationTextView;
+
+    private NotesDbAdapter dbAdapter;
 
     /**
      * Instance ID를 이용하여 디바이스 토큰을 가져오는 RegistrationIntentService를 실행한다.
@@ -89,29 +99,10 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
-
-
-                if(action.equals(QuickstartPreferences.REGISTRATION_READY)){
-                    // 액션이 READY일 경우
-                    //mRegistrationProgressBar.setVisibility(ProgressBar.GONE);
-                    //mInformationTextView.setVisibility(View.GONE);
-                } else if(action.equals(QuickstartPreferences.REGISTRATION_GENERATING)){
-                    // 액션이 GENERATING일 경우
-                    //mRegistrationProgressBar.setVisibility(ProgressBar.VISIBLE);
-                    //mInformationTextView.setVisibility(View.VISIBLE);
-                    //mInformationTextView.setText(getString(R.string.registering_message_generating));
-                } else if(action.equals(QuickstartPreferences.REGISTRATION_COMPLETE)){
-                    // 액션이 COMPLETE일 경우
-                    //mRegistrationProgressBar.setVisibility(ProgressBar.GONE);
-                    //mRegistrationButton.setText(getString(R.string.registering_message_complete));
-                    //mRegistrationButton.setEnabled(false);
-                    //String token = intent.getStringExtra("token");
-                    //mInformationTextView.setText(token);
-                }
-
             }
         };
     }
+
 
     private LatLngBounds AUSTRALIA = new LatLngBounds(
             new LatLng(-44, 113), new LatLng(-10, 154));
@@ -140,6 +131,13 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
                 .check();
 
 
+        //DB
+        Log.d(DB_TAG, "DB TEST :: onCreate()");
+        this.dbAdapter = new NotesDbAdapter(this);
+        readXLSX();
+
+
+        //GCM
         registBroadcastReceiver();
         getInstanceIdToken();
 
@@ -159,6 +157,7 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
 
         // for system bar in lollipop
 
+        readXLSX();
 
 
     }
@@ -317,10 +316,59 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
 //        googleMap.getUiSettings().setZoomControlsEnabled(true);
     }
 
+    //read excel and insert to db
+    public void readXLSX()
+    {
 
+        Workbook workbook = null;
+        Sheet sheet = null;
 
+        try {
+            InputStream is = getBaseContext().getResources().getAssets().open("incheon.xls");
+            workbook = Workbook.getWorkbook(is);
 
+            if (workbook != null) {
+                Log.e("xlsx", "work book");
+                sheet = workbook.getSheet(0);
 
+                if (sheet != null)
+                {
+
+                    int nMaxColumn = 2;
+                    int nRowStartIndex = 1;
+                    int nRowEndIndex = sheet.getColumn(nMaxColumn - 1).length - 1;
+                    int nColumnStartIndex = 0;
+                    //int nColumnEndIndex = sheet.getRow(2).length - 1;
+
+                    dbAdapter.open();
+                    for (int nRow = nRowStartIndex; nRow <= nRowEndIndex; nRow++) {
+                        String cctv_id = sheet.getCell(nColumnStartIndex, nRow).getContents();
+                        String cctv_address = sheet.getCell(nColumnStartIndex + 1, nRow).getContents();
+                        String cctv_contact = sheet.getCell(nColumnStartIndex + 2, nRow).getContents();
+                        String cctv_latitude = sheet.getCell(nColumnStartIndex + 3, nRow).getContents();
+                        String cctv_logitude = sheet.getCell(nColumnStartIndex + 4, nRow).getContents();
+                        dbAdapter.createNote(cctv_id, cctv_address, cctv_contact, cctv_latitude, cctv_logitude);
+                    }
+
+                }
+                else
+                {
+                    Log.e("excel","Sheet is null!!");
+                }
+            }
+            else
+            {
+                Log.e("excel","Workbook is null!!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (workbook != null) {
+                Log.i("excel", "reading excel success");
+                workbook.close();
+            }
+        }
+    }
 }
 
 

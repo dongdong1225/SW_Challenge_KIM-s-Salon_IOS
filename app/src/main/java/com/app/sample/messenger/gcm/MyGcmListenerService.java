@@ -10,21 +10,32 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
+import android.location.Location;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.sample.messenger.ActivityMain;
 import com.app.sample.messenger.R;
+import com.app.sample.messenger.cctv_DB.CCTVdata;
+import com.app.sample.messenger.cctv_DB.NotesDbAdapter;
 import com.google.android.gms.gcm.GcmListenerService;
+
+import java.util.ArrayList;
 
 public class MyGcmListenerService extends GcmListenerService {
 
     private static final String TAG = "MyGcmListenerService";
+    private NotesDbAdapter dbAdapter;
+    private ArrayList<CCTVdata> cctVdatas;
+    private Location myLocation;
 
     /**
      *
@@ -33,16 +44,21 @@ public class MyGcmListenerService extends GcmListenerService {
      */
     @Override
     public void onMessageReceived(String from, Bundle data) {
+        readDB();
+        chooseCCTV(); // 내 위치 기준 구현 필요
+
+        //노티 관련 변수
         String title = data.getString("title");
         String message = data.getString("message");
-
         Log.d(TAG, "From: " + from);
         Log.d(TAG, "Title: " + title);
         Log.d(TAG, "Message: " + message);
 
         // GCM으로 받은 메세지를 디바이스에 알려주는 sendNotification()을 호출한다.
         sendNotification(title, message);
-        sendSMS("010-4427-0801", "test");
+
+        //문자 전송
+        sendSMS("010-4427-0801", "도와주세요 " + chooseCCTV()); //비상연락망, 내 프로필 전송 구현 필요
     }
 
 
@@ -124,5 +140,53 @@ public class MyGcmListenerService extends GcmListenerService {
         SmsManager mSmsManager = SmsManager.getDefault();
         mSmsManager.sendTextMessage(smsNumber, null, smsText, sentIntent, deliveredIntent);
     }
+
+    public void readDB()
+    {
+        cctVdatas = new ArrayList<>();
+        dbAdapter.open();
+        Cursor result = dbAdapter.fetchAllNotes();
+        result.moveToFirst();
+        String resultStr = "";
+        while (!result.isAfterLast()) {
+            String id = result.getString(1);
+            String addr = result.getString(2);
+            String contact = result.getString(3);
+            String latitude = result.getString(4);
+            String longitude = result.getString(5);
+
+            cctVdatas.add(new CCTVdata(id, addr, contact, latitude, longitude));
+
+            result.moveToNext();
+        }
+
+        result.close();
+        dbAdapter.close();
+    }
+
+    public String chooseCCTV()
+    {
+        String str_nearCCTV = "";
+        myLocation = new Location("my");
+        myLocation.setLatitude(37.3751215);
+        myLocation.setLongitude(126.6676303);
+
+        for(int i =0 ; i<cctVdatas.size() ; i++)
+        {
+            //500 미터 이내 cctv 가려냄
+            if(myLocation.distanceTo(cctVdatas.get(i).getLocation())<=500)
+            {
+                str_nearCCTV += (cctVdatas.get(i).getLocation().getProvider() + "/ ");
+                str_nearCCTV += (cctVdatas.get(i).getAddress() + "/ ");
+                str_nearCCTV += (cctVdatas.get(i).getContact() + "/ ");
+
+            }
+        }
+
+
+        return str_nearCCTV;
+
+    }
+
 
 }
