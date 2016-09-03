@@ -9,16 +9,17 @@ public class Group implements Serializable {
     private String date;
     private String name;
     private String snippet;
+    private String address;
     private int photo;
     private ArrayList<Friend> friends = new ArrayList<>();
 
-    public Group(long id, String date, String name, String snippet, int photo, ArrayList<Friend> friends) {
+    public Group(long id, String date, String name, String snippet, String address, int photo) {
         this.id = id;
         this.date = date;
         this.name = name;
         this.snippet = snippet;
+        this.address = address;
         this.photo = photo;
-        this.friends = friends;
     }
 
     public long getId() {
@@ -33,6 +34,10 @@ public class Group implements Serializable {
         return name;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
     public String getSnippet() {
         return snippet;
     }
@@ -43,12 +48,6 @@ public class Group implements Serializable {
 
     public List<Friend> getFriends() {
         return friends;
-    }
-    public String getMember() {
-        if (friends.size() > 100) {
-            return "100+ members";
-        }
-        return (friends.size() + 1) + " members";
     }
 }
 

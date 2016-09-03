@@ -87,7 +87,7 @@ public class ActivityGroupDetails extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setTitle(group.getName());
-        actionBar.setSubtitle(group.getMember());
+        actionBar.setSubtitle(group.getAddress());
     }
 
     public void bindView() {
@@ -109,9 +109,9 @@ public class ActivityGroupDetails extends AppCompatActivity {
             public void onClick(View view) {
                 int index = r.nextInt(group.getFriends().size()-1);
 
-                items.add(items.size(), new GroupDetails(  0, Constant.formatTime(System.currentTimeMillis()), group.getFriends().get(0), et_content.getText().toString(), true));
-                items.add(items.size(), new GroupDetails( 0, Constant.formatTime(System.currentTimeMillis()), group.getFriends().get(index), et_content.getText().toString(), false));
-
+                items.add(items.size(), new GroupDetails( 0, Constant.formatTime(System.currentTimeMillis()), group, et_content.getText().toString(), true));
+                items.add(items.size(), new GroupDetails( 0, Constant.formatTime(System.currentTimeMillis()), group, et_content.getText().toString(), false));
+//group.getFriends().get(0)
                 et_content.setText("");
                 bindView();
                 hideKeyboard();

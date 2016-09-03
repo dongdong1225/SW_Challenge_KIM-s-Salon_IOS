@@ -160,6 +160,9 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
         readXLSX();
 
 
+        NotesDbAdapter nd = new NotesDbAdapter(null);
+        nd.copyExcelDataToDatabase();
+
     }
 
     /**
