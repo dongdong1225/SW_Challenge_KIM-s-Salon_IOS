@@ -12,7 +12,7 @@
     <integer-array name="people_photos">
         <item>@drawable/father</item>
         <item>@drawable/mother</item>
-        <item>@drawable/brother1</item>
+        <item>@drawable/brother3</item>
         <item>@drawable/sister</item>
         <item>@drawable/brother2</item>
     </integer-array>
@@ -47,15 +47,21 @@
         <item>여성긴급전화1366</item>
         <item>한국성폭력상담소</item>
         <item>해바라기센터</item>
+        <item>한국여성의전화</item>
+        <item>경찰청</item>
     </string-array>
 
     <string-array name="groups_date">
         <item>전화번호 : 지역번호 + 1366</item>
         <item>전화번호 : 02 - 338 - 5801</item>
         <item>전화번호 : 02 - 3274 - 1375</item>
+        <item>전화번호 : 02 - 3156 - 5499</item>
+        <item>전화번호 : 112</item>
     </string-array>
 
     <integer-array name="groups_photos">
+        <item>@drawable/ex1</item>
+        <item>@drawable/ex2</item>
         <item>@drawable/ex3</item>
         <item>@drawable/ex4</item>
         <item>@drawable/ex5</item>
@@ -73,15 +79,27 @@
         <item>12:10</item>
     </string-array>
 
+    <string-array name="group_alert">
+        <item>안녕하십니까, 여성긴급전화 1366입니다. 무엇을 도와드릴까요?</item>
+        <item>안녕하십니까, 한국성폭력상담소입니다. 무엇을 도와드릴까요?</item>
+        <item>안녕하십니까, 해바라기센터입니다. 무엇을 도와드릴까요?</item>
+        <item>안녕하십니까, 한국여성의전화입니다. 무엇을 도와드릴까요?</item>
+        <item>안녕하십니까, 경찰청입니다. 무엇을 도와드릴까요?</item>
+    </string-array>
+
     <string-array name="group_details_content">
         <item>안녕하십니까, 여성긴급전화 1366입니다. 무엇을 도와드릴까요?</item>
+        <item>안녕하십니까, 222222222222. 무엇을 도와드릴까요?</item>
+        <item>안녕하십니까, 333333333333. 무엇을 도와드릴까요?</item>
 
     </string-array>
 
     <string-array name="group_details_address">
-        <item>서울특별시 중구 서소문로 50, 3층</item>
+        <item>서울시 중구 서소문로 50, 3층</item>
         <item>서울시 마포구 성지1길 32-42 2층</item>
         <item>서울시 마포구 신수동 63-14번지 7층</item>
+        <item>서울시 은평구 진흥로16길 8-4</item>
+        <item>서울시 서대문구 통일로 97 경찰청</item>
     </string-array>
 
     <string-array name="group_details_date">

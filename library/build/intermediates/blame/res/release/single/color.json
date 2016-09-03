@@ -1,43 +1,27 @@
 [
     {
-        "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
-        "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/res/merged/release/color/common_plus_signin_btn_text_dark.xml",
-        "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_plus_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/res/merged/release/color/common_plus_signin_btn_text_dark.xml",
-        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_plus_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/res/merged/release/color/common_google_signin_btn_text_light.xml",
-        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_google_signin_btn_text_light.xml"
-    },
-    {
         "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/res/merged/release/color/common_plus_signin_btn_text_light.xml",
         "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_plus_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
-        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/res/merged/release/color/common_plus_signin_btn_text_light.xml",
-        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_plus_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\res\\merged\\release\\color\\common_plus_signin_btn_text_dark.xml",
-        "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\color\\common_plus_signin_btn_text_dark.xml"
     },
     {
         "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\res\\merged\\release\\color\\common_plus_signin_btn_text_light.xml",
         "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\color\\common_plus_signin_btn_text_light.xml"
     },
     {
-        "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_light.xml",
-        "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\color\\common_google_signin_btn_text_light.xml"
+        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/res/merged/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\res\\merged\\release\\color\\common_plus_signin_btn_text_dark.xml",
+        "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\color\\common_plus_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/res/merged/release/color/common_plus_signin_btn_text_dark.xml",
+        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_plus_signin_btn_text_dark.xml"
     },
     {
         "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_dark.xml",
@@ -46,5 +30,21 @@
     {
         "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/res/merged/release/color/common_google_signin_btn_text_light.xml",
         "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/res/merged/release/color/common_plus_signin_btn_text_light.xml",
+        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_plus_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_light.xml",
+        "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/res/merged/release/color/common_plus_signin_btn_text_dark.xml",
+        "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_plus_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/color/common_google_signin_btn_text_dark.xml"
     }
 ]
