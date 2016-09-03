@@ -93,11 +93,12 @@ public class Constant {
         List<Group> items = new ArrayList<>();
         String s_name[] = ctx.getResources().getStringArray(R.array.groups_name);
         String s_date[] = ctx.getResources().getStringArray(R.array.groups_date);
+        String s_address[] = ctx.getResources().getStringArray(R.array.group_details_address);
         TypedArray drw_arr = ctx.getResources().obtainTypedArray(R.array.groups_photos);
 
-        items.add(new Group(0, s_date[0], s_name[0], "", drw_arr.getResourceId(0,-1), friendSubList(ctx, 0, 5)));
-        items.add(new Group(1, s_date[1], s_name[1], "", drw_arr.getResourceId(1,-1), friendSubList(ctx, 7, 8)));
-        items.add(new Group(2, s_date[2], s_name[2], "", drw_arr.getResourceId(2,-1), friendSubList(ctx, 6, 14)));
+        items.add(new Group(0, s_date[0], s_name[0], "", s_address[0], drw_arr.getResourceId(0,-1)));
+        items.add(new Group(1, s_date[1], s_name[1], "", s_address[1], drw_arr.getResourceId(1,-1)));
+        items.add(new Group(2, s_date[2], s_name[2], "", s_address[2], drw_arr.getResourceId(2,-1)));
 
         return items;
     }
@@ -125,21 +126,23 @@ public class Constant {
     }
 
     public static List<GroupDetails> getGroupDetailsData(Context ctx)  {
+        List<Group> groups = getGroupData(ctx);
         List<GroupDetails> items = new ArrayList<>();
         List<Friend> friends = getFriendsData(ctx);
 
         String s_date[] = ctx.getResources().getStringArray(R.array.group_details_date);
         String s_content[] = ctx.getResources().getStringArray(R.array.group_details_content);
 
-        items.add(new GroupDetails(0, s_date[0], friends.get(2), s_content[0], false));
-        items.add(new GroupDetails(1, s_date[1], friends.get(10), s_content[1], false));
-        items.add(new GroupDetails(2, s_date[2], friends.get(7), s_content[2], false));
-        items.add(new GroupDetails(3, s_date[3], friends.get(8), s_content[3], false));
-        items.add(new GroupDetails(4, s_date[4], friends.get(7), s_content[4], false));
-        items.add(new GroupDetails(5, s_date[5], friends.get(14), s_content[5], true));
-        items.add(new GroupDetails(6, s_date[6], friends.get(0), s_content[6], false));
-        items.add(new GroupDetails(7, s_date[7], friends.get(12), s_content[7], true));
-        items.add(new GroupDetails(8, s_date[8], friends.get(3), s_content[8], false));
+        items.add(new GroupDetails(0, s_date[0], groups.get(0), s_content[0], false));
+//items.add(new GroupDetails(0, s_date[0],groups.get(0) , s_content[0], false));
+//        items.add(new GroupDetails(1, s_date[1], friends.get(10), s_content[1], false));
+//        items.add(new GroupDetails(2, s_date[2], friends.get(7), s_content[2], false));
+//        items.add(new GroupDetails(3, s_date[3], friends.get(8), s_content[3], false));
+//        items.add(new GroupDetails(4, s_date[4], friends.get(7), s_content[4], false));
+//        items.add(new GroupDetails(5, s_date[5], friends.get(14), s_content[5], true));
+//        items.add(new GroupDetails(6, s_date[6], friends.get(0), s_content[6], false));
+//        items.add(new GroupDetails(7, s_date[7], friends.get(12), s_content[7], true));
+//        items.add(new GroupDetails(8, s_date[8], friends.get(3), s_content[8], false));
 
         return items;
     }

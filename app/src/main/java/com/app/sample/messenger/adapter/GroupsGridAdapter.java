@@ -84,7 +84,9 @@ public class GroupsGridAdapter extends RecyclerView.Adapter<GroupsGridAdapter.Vi
         holder.title.setText(g.getName());
 
         holder.time.setText(g.getDate());
-        holder.content.setText(g.getMember());
+        holder.time.setTextSize(12);
+        holder.content.setText(g.getAddress());
+        holder.content.setTextSize(12);
         Picasso.with(ctx).load(g.getPhoto()).resize(200, 200).transform(new CircleTransform()).into(holder.image);
 
         // view detail message conversation

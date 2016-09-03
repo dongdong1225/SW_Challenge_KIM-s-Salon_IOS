@@ -62,14 +62,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Username"
+                            android:text="사용자 이름"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textColor="@color/grey_dark" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="john_miller"
+                            android:text="김소현"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="@color/grey_medium" />
                     </LinearLayout>
@@ -115,14 +115,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Phone Number"
+                            android:text="휴대폰 번호"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textColor="@color/grey_dark" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="+60 872 092 88"
+                            android:text="010 - 3173 - 1074"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="@color/grey_medium" />
                     </LinearLayout>

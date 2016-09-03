@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.app.sample.messenger.R;
 import com.app.sample.messenger.model.GroupDetails;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class GroupDetailsListAdapter extends BaseAdapter {
@@ -45,6 +47,11 @@ public class GroupDetailsListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		long currentTime = System.currentTimeMillis();
+		Date date = new Date(currentTime);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+		String string = simpleDateFormat.format(date);
+
 		GroupDetails g = (GroupDetails) getItem(position);
         ViewHolder holder;
         if(convertView == null){
@@ -60,9 +67,10 @@ public class GroupDetailsListAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
-		holder.sender.setText(g.getFriend().getName());
+		holder.sender.setText(g.getGroup().getName());
         holder.message.setText(g.getContent());
-		holder.time.setText(g.getDate());
+		//holder.time.setText(g.getDate());
+		holder.time.setText(string);
 
         if(g.isFromMe()){
 			holder.sender.setVisibility(View.GONE);

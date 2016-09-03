@@ -5,14 +5,14 @@ import java.io.Serializable;
 public class GroupDetails implements Serializable{
 	private long id;
 	private String date;
-	private Friend friend;
+	private Group group;
 	private String content;
 	private boolean fromMe;
 
-	public GroupDetails(long id, String date, Friend friend, String content, boolean fromMe) {
+	public GroupDetails(long id, String date, Group group, String content, boolean fromMe) {
 		this.id = id;
 		this.date = date;
-		this.friend = friend;
+		this.group = group;
 		this.content = content;
 		this.fromMe = fromMe;
 	}
@@ -25,8 +25,8 @@ public class GroupDetails implements Serializable{
 		return date;
 	}
 
-	public Friend getFriend() {
-		return friend;
+	public Group getGroup() {
+		return group;
 	}
 
 	public String getContent() {
