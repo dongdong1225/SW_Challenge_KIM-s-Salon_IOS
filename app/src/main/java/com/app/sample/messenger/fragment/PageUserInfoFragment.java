@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,7 +29,15 @@ public class PageUserInfoFragment extends Fragment {
             Snackbar.make(root_view, "Username Clicked", Snackbar.LENGTH_SHORT).show();
         }else if(v.getId() == R.id.lyt_phone){
             Snackbar.make(root_view, "Phone Clicked", Snackbar.LENGTH_SHORT).show();
-        }else {
+        }
+        else if(v.getId() == R.id.emergency_button)
+        {
+
+            //Button emrgencyButton = (Button) root_view.findViewById(R.id.emergency_button);
+            //emrgencyButton.setText("신고 취소하기");
+        }
+
+        else {
             TextView textView = getChildTextView(v);
             String str = textView == null ? "-" : textView.getText().toString();
             Snackbar.make(root_view, str + " Clicked", Snackbar.LENGTH_SHORT).show();

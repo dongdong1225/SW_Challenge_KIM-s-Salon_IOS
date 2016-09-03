@@ -165,38 +165,6 @@
                 android:layout_marginLeft="50dp"
                 android:background="@color/grey_soft" />
 
-            <com.balysv.materialripple.MaterialRippleLayout
-                style="@style/RippleStyleBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/spacing_middle">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="@dimen/spacing_middle"
-                        android:src="@drawable/ic_people"
-                        android:tint="@color/colorPrimary" />
-
-                    <Switch
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="People"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_dark"
-                        android:checked="true"
-                        />
-
-                </LinearLayout>
-            </com.balysv.materialripple.MaterialRippleLayout>
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
