@@ -18,7 +18,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/spacing_large" />
+            android:layout_height="@dimen/spacing_xsmall" />
 
         <View
             android:layout_width="match_parent"
@@ -49,15 +49,17 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="@dimen/spacing_middle"
-                        android:src="@drawable/ic_user"
+                        android:src="@drawable/ic_privacy"
                         android:tint="@color/colorPrimary" />
 
                         <Switch
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Username"
+                            android:text="스프레이 분사시 자동 신고"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                            android:textColor="@color/grey_dark" />
+                            android:textColor="@color/grey_dark"
+                            android:checked="true"
+                            />
 
                 </LinearLayout>
             </com.balysv.materialripple.MaterialRippleLayout>
@@ -93,9 +95,11 @@
                         <Switch
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Phone Number"
+                            android:text="비상 연락망 가동"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                            android:textColor="@color/grey_dark" />
+                            android:textColor="@color/grey_dark"
+                            android:checked="true"
+                            />
 
 
                 </LinearLayout>
@@ -140,15 +144,17 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="@dimen/spacing_middle"
-                        android:src="@drawable/ic_notification"
+                        android:src="@drawable/ic_report"
                         android:tint="@color/colorPrimary" />
 
                     <Switch
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Notifications &amp; Sounds "
+                        android:text="내 주변 치안 정보 수신"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_dark" />
+                        android:textColor="@color/grey_dark"
+                        android:checked="true"
+                        />
 
                 </LinearLayout>
             </com.balysv.materialripple.MaterialRippleLayout>
@@ -184,7 +190,9 @@
                         android:layout_height="wrap_content"
                         android:text="People"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_dark" />
+                        android:textColor="@color/grey_dark"
+                        android:checked="true"
+                        />
 
                 </LinearLayout>
             </com.balysv.materialripple.MaterialRippleLayout>
@@ -195,178 +203,7 @@
                 android:layout_marginLeft="50dp"
                 android:background="@color/grey_soft" />
 
-            <com.balysv.materialripple.MaterialRippleLayout
-                style="@style/RippleStyleBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/spacing_middle">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="@dimen/spacing_middle"
-                        android:src="@drawable/ic_photo"
-                        android:tint="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Photos &amp; Media"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_dark" />
-
-                </LinearLayout>
-            </com.balysv.materialripple.MaterialRippleLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_marginLeft="50dp"
-                android:background="@color/grey_soft" />
-
-            <com.balysv.materialripple.MaterialRippleLayout
-                style="@style/RippleStyleBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/spacing_middle">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="@dimen/spacing_middle"
-                        android:src="@drawable/ic_account"
-                        android:tint="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Accounts"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_dark" />
-
-                </LinearLayout>
-            </com.balysv.materialripple.MaterialRippleLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_marginLeft="50dp"
-                android:background="@color/grey_soft" />
-
-            <com.balysv.materialripple.MaterialRippleLayout
-                style="@style/RippleStyleBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/spacing_middle">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="@dimen/spacing_middle"
-                        android:src="@drawable/ic_report"
-                        android:tint="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Report a problem"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_dark" />
-
-                </LinearLayout>
-            </com.balysv.materialripple.MaterialRippleLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_marginLeft="50dp"
-                android:background="@color/grey_soft" />
-
-            <com.balysv.materialripple.MaterialRippleLayout
-                style="@style/RippleStyleBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/spacing_middle">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="@dimen/spacing_middle"
-                        android:src="@drawable/ic_help"
-                        android:tint="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Help"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_dark" />
-
-                </LinearLayout>
-            </com.balysv.materialripple.MaterialRippleLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_marginLeft="50dp"
-                android:background="@color/grey_soft" />
-
-            <com.balysv.materialripple.MaterialRippleLayout
-                style="@style/RippleStyleBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/spacing_middle">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="@dimen/spacing_middle"
-                        android:src="@drawable/ic_privacy"
-                        android:tint="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Privacy &amp; Terms"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_dark" />
-
-                </LinearLayout>
-            </com.balysv.materialripple.MaterialRippleLayout>
 
         </LinearLayout>
         <View

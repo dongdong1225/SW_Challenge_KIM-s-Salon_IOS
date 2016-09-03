@@ -1,36 +1,32 @@
 package com.app.sample.messenger.fragment;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+
 import com.app.sample.messenger.R;
-import com.app.sample.messenger.adapter.CallListAdapter;
 import com.app.sample.messenger.adapter.ChatsListAdapter;
-import com.app.sample.messenger.data.Constant;
 import com.app.sample.messenger.data.DangerPlace;
+import com.app.sample.messenger.data.OwnIconRendered;
 import com.app.sample.messenger.model.Chat;
-import com.app.sample.messenger.model.Friend;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -41,7 +37,6 @@ import com.google.maps.android.clustering.ClusterManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 
 
@@ -73,6 +68,8 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
     public static final int CLUSTERING_DISABLED_DYNAMIC = 1;
     public static final int CLUSTERING_ENABLED = 2;
     public static final int CLUSTERING_ENABLED_DYNAMIC = 3;
+
+    private boolean initMyLoc = false;
 
     private static final int MARKERS_COUNT = 20000;
 
@@ -190,7 +187,86 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
         });
         //map = SupportMapFragment.newInstance().getExtendedMap();
         //setUpMap();
+        addDangerPlace();
 
+    }
+
+    private void addDangerPlace()
+    {
+
+        Random rand = new Random();
+        LatLng loc = new LatLng(0,0);
+        for(int i = 0; i < 500; i ++) {
+            double randnum = rand.nextDouble();
+            int randInt = rand.nextInt(4);
+            int randX = rand.nextInt(100);
+            rand.setSeed(System.currentTimeMillis());
+            int randY = rand.nextInt(100);
+
+            switch(randInt)
+            {
+                case 0 :
+
+                    loc = new LatLng(37.4716393 + randnum/randX,126.7558353 + randnum/randY);
+                    break;
+                case 1 :
+                    loc = new LatLng(37.4716393 + randnum/randX,126.7558353 - randnum/randY);
+                    break;
+                case 2 :
+                    loc = new LatLng(37.4716393 - randnum/randX,126.7558353 + randnum/randY);
+                    break;
+                case 3 :
+                    loc = new LatLng(37.4716393 - randnum/randX,126.7558353 - randnum/randY);
+                    break;
+                default :
+
+                    break;
+
+            }
+
+                    mClusterManger.addItem(new DangerPlace(loc));
+                    mClusterManger.setRenderer(new OwnIconRendered(this.getContext(),map,mClusterManger));
+
+        }
+
+
+        for(int i = 0; i < 30; i ++) {
+            rand.setSeed(System.currentTimeMillis());
+            double randnum = rand.nextDouble();
+            int randInt = rand.nextInt(4);
+            int randX = rand.nextInt(10);
+            int randY = rand.nextInt(10);
+            double randnum2 = rand.nextDouble();
+
+            switch(randInt)
+            {
+                case 0 :
+                    loc = new LatLng(37.4716393 + randnum/randX,126.7558353 + randnum2/randY);
+                    break;
+                case 1 :
+                    loc = new LatLng(37.4716393 + randnum/randX,126.7558353 - randnum2/randY);
+                    break;
+                case 2 :
+                    loc = new LatLng(37.4716393 - randnum/randX,126.7558353 + randnum2/randY);
+                    break;
+                case 3 :
+                    loc = new LatLng(37.4716393 - randnum/randX,126.7558353 - randnum2/randY);
+                    break;
+                default :
+
+                    break;
+
+
+
+            }
+
+            Bitmap bigPictureBitmap  = BitmapFactory.decodeResource(this.getContext().getResources(),R.drawable.policeicon);
+            bigPictureBitmap = Bitmap.createScaledBitmap(bigPictureBitmap,128,128,true);
+            map.addMarker(new MarkerOptions().position(loc).icon(BitmapDescriptorFactory.fromBitmap(bigPictureBitmap)));
+           // mClusterManger.addItem(new DangerPlace(loc));
+           // mClusterManger.setRenderer(new OwnIconRendered(this.getContext(),map,mClusterManger));
+
+        }
     }
 
     private GoogleMap.OnMyLocationChangeListener myLocationChangeListener() {
@@ -204,10 +280,12 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
                 Marker marker;
                 //com.androidmapsextensions.MarkerOptions options = new com.androidmapsextensions.MarkerOptions();
                 //marker = map.addMarker(options.position(loc));
-                marker = map.addMarker(new MarkerOptions().position(loc));
-                mClusterManger.addItem(new DangerPlace(loc));
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
-
+                //marker = map.addMarker(new MarkerOptions().position(loc));
+                //mClusterManger.addItem(new DangerPlace(loc));
+                if(initMyLoc == false) {
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
+                    initMyLoc = true;
+                }
                 //locationText.setText("You are at [" + longitude + " ; " + latitude + " ]");
 
                 //get current address by invoke an AsyncTask object
