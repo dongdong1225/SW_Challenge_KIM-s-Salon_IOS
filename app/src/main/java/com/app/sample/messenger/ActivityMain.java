@@ -103,6 +103,7 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
         };
     }
 
+
     private LatLngBounds AUSTRALIA = new LatLngBounds(
             new LatLng(-44, 113), new LatLng(-10, 154));
 

@@ -84,11 +84,6 @@
             android:exported="false" />
         <!-- [END gcm_registration_service] -->
 
-        <provider
-            android:name=".cctv.ShareContentProvider"
-            android:authorities="com.app.sample.messenger"
-            android:enabled="true"
-            android:exported="true"></provider>
     </application>
 
 </manifest>
