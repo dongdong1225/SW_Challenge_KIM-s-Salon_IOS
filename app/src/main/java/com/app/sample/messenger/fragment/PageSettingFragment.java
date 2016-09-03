@@ -97,9 +97,4 @@ public class PageSettingFragment extends Fragment {
 
     }
 
-
-
-
-
-
 }

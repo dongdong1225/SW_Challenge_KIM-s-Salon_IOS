@@ -9,16 +9,9 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.TextView;
 
-import java.io.InputStream;
-
-import jxl.Sheet;
-import jxl.Workbook;
-
-public class NotesDbAdapter extends AppCompatActivity
+public class NotesDbAdapter
 {
     public static final String KEY_ID = "ID";
     public static final String KEY_ADDRESS = "Address";
@@ -30,18 +23,18 @@ public class NotesDbAdapter extends AppCompatActivity
     private DatabaseHelper mDbHelper;
     private SQLiteDatabase mDb;
 
-    private static final String DATABASE_CREATE = "create table CCTV (ID integer primary key, "
-                                                                + "Address text not null, "
-                                                                + "Contact text not null," +
-                                                                    "Latitude text not null," +
-                                                                    "Longitude text not null);";
+    private static final String DATABASE_CREATE = "create table CCTV (cctv_id integer primary key, "
+                                                                + "cctv_address text not null, "
+                                                                + "cctv_contact text not null," +
+                                                                    "cctv_latitude text not null," +
+                                                                    "cctv_longitude text not null);";
 
     private static final String DATABASE_NAME = "data.db";
     private static final String DATABASE_TABLE = "cctv";
     private static final int DATABASE_VERSION = 2;
     private final Context mCtx;
 
-    private class DatabaseHelper extends SQLiteOpenHelper
+    private static class DatabaseHelper extends SQLiteOpenHelper
     {
         DatabaseHelper(Context context)
         {
@@ -58,68 +51,6 @@ public class NotesDbAdapter extends AppCompatActivity
             Log.w(TAG, "Upgrading database from version " + oldVersion + " to " + newVersion + ", which will destroy all old data");
             db.execSQL("DROP TABLE IF EXISTS notes");
             onCreate(db);
-        }
-
-    }
-
-    public void copyExcelDataToDatabase() {
-
-        Log.w("ExcelToDatabase", "copyExcelDataToDatabase()");
-
-        Workbook workbook = null;
-        Sheet sheet = null;
-
-        try {
-            Log.i("COLUM","before i");
-            InputStream is = getBaseContext().getResources().getAssets().open("incheon.xls");
-            Log.i("COLUM","before iff");
-            workbook = Workbook.getWorkbook(is);
-            Log.i("COLUM","before if");
-
-            if (workbook != null) {
-                sheet = workbook.getSheet(0);
-                Log.i("COLUM","in if");
-                if (sheet != null) {
-
-                    int nMaxColumn = 2;
-                    int nRowStartIndex = 0;
-                    int nRowEndIndex = sheet.getColumn(nMaxColumn - 1).length - 1;
-                    int nColumnStartIndex = 0;
-                    int nColumnEndIndex = sheet.getRow(2).length - 1;
-
-                    for (int nRow = nRowStartIndex; nRow <= nRowEndIndex; nRow++) {
-
-                        String column1 = sheet.getCell(nColumnStartIndex , nRow).getContents();
-                        String column2 = sheet.getCell(nColumnStartIndex + 1, nRow).getContents();
-                        String column3 = sheet.getCell(nColumnStartIndex + 2, nRow).getContents();
-                        String column4 = sheet.getCell(nColumnStartIndex + 3, nRow).getContents();
-                        String column5 = sheet.getCell(nColumnStartIndex + 4, nRow).getContents();
-//
-//                        str += column1;
-//                        str += column2;
-//                        str += column3;
-//                        str += column4;
-//                        str += "\n";
-                        Log.i("COLUMN",column1);
-                        createNote(column1,column2,column3,column4,column5);
-                    }
-
-                }
-
-                else {
-                    System.out.println("Sheet is null!!");
-                }
-
-            } else {
-                System.out.println("WorkBook is null!!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.i("COLUM",e.getMessage());
-        } finally {
-            if (workbook != null) {
-                workbook.close();
-            }
         }
     }
 
@@ -145,13 +76,7 @@ public class NotesDbAdapter extends AppCompatActivity
         initialValues.put(KEY_CONTACT, contact);
         initialValues.put(KEY_LATITUDE, latitude);
         initialValues.put(KEY_LONGITUDE, longitude);
-        try {
-            return mDb.insert(DATABASE_TABLE, null, initialValues);
-        }
-        catch (Exception e) {
-         //   e.printStackTrace();
-        }
-        return 0;
+        return mDb.insert(DATABASE_TABLE, null, initialValues);
     }
 
 //    public boolean deleteNote(long rowId) {
@@ -179,7 +104,5 @@ public class NotesDbAdapter extends AppCompatActivity
 //        args.put(KEY_BODY, body);
 //        return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
 //    }
-
-
 
 }

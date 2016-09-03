@@ -1,18 +1,18 @@
 [
     {
-        "merged": "E:\\mobile\\Saluto_android2\\android-maps-extensions\\build\\intermediates\\res\\merged\\debug\\drawable\\common_signin_btn_icon_dark.xml",
-        "source": "E:\\mobile\\Saluto_android2\\android-maps-extensions\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.1.0\\res\\drawable\\common_signin_btn_icon_dark.xml"
+        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/android-maps-extensions/build/intermediates/res/merged/debug/drawable/common_signin_btn_text_dark.xml",
+        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/android-maps-extensions/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/res/drawable/common_signin_btn_text_dark.xml"
     },
     {
-        "merged": "E:\\mobile\\Saluto_android2\\android-maps-extensions\\build\\intermediates\\res\\merged\\debug\\drawable\\common_signin_btn_text_dark.xml",
-        "source": "E:\\mobile\\Saluto_android2\\android-maps-extensions\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.1.0\\res\\drawable\\common_signin_btn_text_dark.xml"
+        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/android-maps-extensions/build/intermediates/res/merged/debug/drawable/common_signin_btn_icon_dark.xml",
+        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/android-maps-extensions/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/res/drawable/common_signin_btn_icon_dark.xml"
     },
     {
-        "merged": "E:\\mobile\\Saluto_android2\\android-maps-extensions\\build\\intermediates\\res\\merged\\debug\\drawable\\common_signin_btn_text_light.xml",
-        "source": "E:\\mobile\\Saluto_android2\\android-maps-extensions\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.1.0\\res\\drawable\\common_signin_btn_text_light.xml"
+        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/android-maps-extensions/build/intermediates/res/merged/debug/drawable/common_signin_btn_icon_light.xml",
+        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/android-maps-extensions/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/res/drawable/common_signin_btn_icon_light.xml"
     },
     {
-        "merged": "E:\\mobile\\Saluto_android2\\android-maps-extensions\\build\\intermediates\\res\\merged\\debug\\drawable\\common_signin_btn_icon_light.xml",
-        "source": "E:\\mobile\\Saluto_android2\\android-maps-extensions\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.1.0\\res\\drawable\\common_signin_btn_icon_light.xml"
+        "merged": "/Users/dongheelee/Desktop/해커톤/Saluto/android-maps-extensions/build/intermediates/res/merged/debug/drawable/common_signin_btn_text_light.xml",
+        "source": "/Users/dongheelee/Desktop/해커톤/Saluto/android-maps-extensions/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/res/drawable/common_signin_btn_text_light.xml"
     }
 ]

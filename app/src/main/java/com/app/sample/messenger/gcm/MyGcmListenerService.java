@@ -26,6 +26,7 @@ import com.app.sample.messenger.ActivityMain;
 import com.app.sample.messenger.R;
 import com.app.sample.messenger.cctv_DB.CCTVdata;
 import com.app.sample.messenger.cctv_DB.NotesDbAdapter;
+import com.app.sample.messenger.data.Singleton;
 import com.google.android.gms.gcm.GcmListenerService;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class MyGcmListenerService extends GcmListenerService {
     private NotesDbAdapter dbAdapter;
     private ArrayList<CCTVdata> cctVdatas;
     private Location myLocation;
+    private Singleton singleton;
 
     /**
      *
@@ -59,6 +61,10 @@ public class MyGcmListenerService extends GcmListenerService {
 
         //문자 전송
         sendSMS("010-4427-0801", "도와주세요 " + chooseCCTV()); //비상연락망, 내 프로필 전송 구현 필요
+
+
+
+
     }
 
 
