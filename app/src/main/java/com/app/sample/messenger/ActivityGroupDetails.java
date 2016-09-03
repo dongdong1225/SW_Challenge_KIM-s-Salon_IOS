@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -64,11 +65,11 @@ public class ActivityGroupDetails extends AppCompatActivity {
         // initialize conversation data
         Intent intent = getIntent();
         group = (Group) intent.getExtras().getSerializable(KEY_GROUP);
+        int position = group.getId();
 
         initToolbar();
-
         iniComponen();
-        items = Constant.getGroupDetailsData(this);
+        items = Constant.getGroupDetailsData(this, position);
 
         adapter = new GroupDetailsListAdapter(this, items);
         listview.setAdapter(adapter);

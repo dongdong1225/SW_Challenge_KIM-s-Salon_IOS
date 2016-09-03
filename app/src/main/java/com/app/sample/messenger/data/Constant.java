@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.Log;
+import android.widget.AdapterView;
 
 import com.app.sample.messenger.R;
 import com.app.sample.messenger.model.Chat;
@@ -12,6 +13,7 @@ import com.app.sample.messenger.model.Friend;
 import com.app.sample.messenger.model.Group;
 import com.app.sample.messenger.model.GroupDetails;
 
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -101,6 +103,7 @@ public class Constant {
         items.add(new Group(2, s_date[2], s_name[2], "", s_address[2], drw_arr.getResourceId(2,-1)));
         items.add(new Group(3, s_date[3], s_name[3], "", s_address[3], drw_arr.getResourceId(3,-1)));
         items.add(new Group(4, s_date[4], s_name[4], "", s_address[4], drw_arr.getResourceId(4,-1)));
+        items.add(new Group(5, s_date[5], s_name[5], "", s_address[5], drw_arr.getResourceId(5,-1)));
 
         return items;
     }
@@ -129,24 +132,14 @@ public class Constant {
 
 
 
-    public static List<GroupDetails> getGroupDetailsData(Context ctx)  {
+    public static List<GroupDetails> getGroupDetailsData(Context ctx, int position)  {
         List<Group> groups = getGroupData(ctx);
         List<GroupDetails> items = new ArrayList<>();
-        List<Friend> friends = getFriendsData(ctx);
 
         String s_date[] = ctx.getResources().getStringArray(R.array.group_details_date);
-        String s_content[] = ctx.getResources().getStringArray(R.array.group_details_content);
+        String s_content[] = ctx.getResources().getStringArray(R.array.group_alert);
 
-        items.add(new GroupDetails(0, s_date[0], groups.get(0), s_content[0], false));
-//items.add(new GroupDetails(0, s_date[0],groups.get(0) , s_content[0], false));
-//        items.add(new GroupDetails(1, s_date[1], friends.get(10), s_content[1], false));
-//        items.add(new GroupDetails(2, s_date[2], friends.get(7), s_content[2], false));
-//        items.add(new GroupDetails(3, s_date[3], friends.get(8), s_content[3], false));
-//        items.add(new GroupDetails(4, s_date[4], friends.get(7), s_content[4], false));
-//        items.add(new GroupDetails(5, s_date[5], friends.get(14), s_content[5], true));
-//        items.add(new GroupDetails(6, s_date[6], friends.get(0), s_content[6], false));
-//        items.add(new GroupDetails(7, s_date[7], friends.get(12), s_content[7], true));
-//        items.add(new GroupDetails(8, s_date[8], friends.get(3), s_content[8], false));
+        items.add(new GroupDetails(0, s_date[0], groups.get(position), s_content[position], false));
 
         return items;
     }
@@ -170,6 +163,4 @@ public class Constant {
     public static boolean getBoolean() {
         return rnd.nextBoolean();
     }
-
-
 }
