@@ -29,4 +29,6 @@ public class DangerPlace implements ClusterItem {
     public LatLng getPosition() {
         return location;
     }
+
+
 }
