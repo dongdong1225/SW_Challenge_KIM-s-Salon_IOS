@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\res\\merged\\release\\values-fr\\values-fr.xml",
+        "outputFile": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/res/merged/release/values-fr/values-fr.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 208
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 420
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 552
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 688
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 925
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 1162
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 1297
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 1439
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -163,7 +163,7 @@
                     "endOffset": 1727
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 2003
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -201,7 +201,7 @@
                     "endOffset": 2127
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -220,7 +220,7 @@
                     "endOffset": 2241
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -239,7 +239,7 @@
                     "endOffset": 2457
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -258,7 +258,7 @@
                     "endOffset": 2595
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -277,7 +277,7 @@
                     "endOffset": 2814
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -296,7 +296,7 @@
                     "endOffset": 2952
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -315,7 +315,7 @@
                     "endOffset": 3161
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -334,7 +334,7 @@
                     "endOffset": 3264
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -353,7 +353,7 @@
                     "endOffset": 3361
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -372,7 +372,392 @@
                     "endOffset": 3474
                 },
                 "from": {
-                    "file": "C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/library/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/values-fr/values.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 3302,
+                        "endColumn": 112,
+                        "endOffset": 3410
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\res\\merged\\release\\values-fr\\values-fr.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 107,
+                    "endOffset": 208
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 329,
+                        "endColumn": 107,
+                        "endOffset": 432
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 213,
+                    "endColumn": 211,
+                    "endOffset": 420
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 437,
+                        "endColumn": 211,
+                        "endOffset": 644
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 425,
+                    "endColumn": 131,
+                    "endOffset": 552
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 649,
+                        "endColumn": 131,
+                        "endOffset": 776
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 557,
+                    "endColumn": 135,
+                    "endOffset": 688
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 781,
+                        "endColumn": 135,
+                        "endOffset": 912
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 693,
+                    "endColumn": 236,
+                    "endOffset": 925
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 917,
+                        "endColumn": 236,
+                        "endOffset": 1149
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 930,
+                    "endColumn": 236,
+                    "endOffset": 1162
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1154,
+                        "endColumn": 236,
+                        "endOffset": 1386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1167,
+                    "endColumn": 134,
+                    "endOffset": 1297
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1391,
+                        "endColumn": 134,
+                        "endOffset": 1521
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1302,
+                    "endColumn": 141,
+                    "endOffset": 1439
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1526,
+                        "endColumn": 141,
+                        "endOffset": 1663
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1444,
+                    "endColumn": 287,
+                    "endOffset": 1727
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 331,
+                        "endColumn": 287,
+                        "endOffset": 614
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1732,
+                    "endColumn": 275,
+                    "endOffset": 2003
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1668,
+                        "endColumn": 275,
+                        "endOffset": 1939
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 2008,
+                    "endColumn": 123,
+                    "endOffset": 2127
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1944,
+                        "endColumn": 123,
+                        "endOffset": 2063
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 2132,
+                    "endColumn": 113,
+                    "endOffset": 2241
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 2068,
+                        "endColumn": 113,
+                        "endOffset": 2177
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 2246,
+                    "endColumn": 215,
+                    "endOffset": 2457
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 2182,
+                        "endColumn": 215,
+                        "endOffset": 2393
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 2462,
+                    "endColumn": 137,
+                    "endOffset": 2595
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 2398,
+                        "endColumn": 137,
+                        "endOffset": 2531
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 2600,
+                    "endColumn": 218,
+                    "endOffset": 2814
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 2536,
+                        "endColumn": 218,
+                        "endOffset": 2750
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 2819,
+                    "endColumn": 137,
+                    "endOffset": 2952
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 2755,
+                        "endColumn": 137,
+                        "endOffset": 2888
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 2957,
+                    "endColumn": 208,
+                    "endOffset": 3161
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 2893,
+                        "endColumn": 208,
+                        "endOffset": 3097
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 3166,
+                    "endColumn": 102,
+                    "endOffset": 3264
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 3102,
+                        "endColumn": 102,
+                        "endOffset": 3200
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 3269,
+                    "endColumn": 96,
+                    "endOffset": 3361
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 3205,
+                        "endColumn": 96,
+                        "endOffset": 3297
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 3366,
+                    "endColumn": 112,
+                    "endOffset": 3474
+                },
+                "from": {
+                    "file": "/Users/Hyowon/AndroidStudioProjects/Saluto_android7/C:\\Users\\duddu\\Desktop\\Hackerton\\Saluto_android2\\library\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-fr\\values.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
