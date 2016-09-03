@@ -1,1 +1,1 @@
-include ':app', ':tedpermission', ':android-maps-extensions', ':library'
+include ':app', ':tedpermission', ':library'

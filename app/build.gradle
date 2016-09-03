@@ -43,9 +43,12 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile files('libs/jxl.jar')
+
+    compile project(':library')
+    //compile 'com.google.maps.android:android-maps-utils:0.4.+'
+    //compile 'com.google.android.gms:play-services-maps:9.4.0'
     compile 'gun0912.ted:tedpermission:1.0.0'
     compile 'com.android.support:appcompat-v7:24.2.0'
-
     compile 'com.android.support:cardview-v7:24.2.0'
     compile 'com.android.support:recyclerview-v7:24.2.0'
     compile 'com.android.support:design:24.2.0'
@@ -56,8 +59,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:9.4.0'
     compile 'com.google.android.gms:play-services-auth:9.4.0'
     compile 'com.google.android.gms:play-services-gcm:9.4.0'
-    compile project(':library')
-    //compile 'com.google.maps.android:android-maps-utils:0.4.+'
-    //compile 'com.google.android.gms:play-services-maps:9.4.0'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import com.app.sample.messenger.R;
 import com.app.sample.messenger.adapter.ChatsListAdapter;
 import com.app.sample.messenger.data.DangerPlace;
+import com.app.sample.messenger.data.MyClusterRenderer;
 import com.app.sample.messenger.data.OwnIconRendered;
 import com.app.sample.messenger.model.Chat;
 import com.google.android.gms.location.LocationListener;
@@ -260,7 +261,7 @@ public class PageMapFragment extends Fragment implements OnMapReadyCallback {
 
             }
 
-            Bitmap bigPictureBitmap  = BitmapFactory.decodeResource(this.getContext().getResources(),R.drawable.policeicon);
+            Bitmap bigPictureBitmap  = BitmapFactory.decodeResource(this.getContext().getResources(),R.drawable.policecar);
             bigPictureBitmap = Bitmap.createScaledBitmap(bigPictureBitmap,128,128,true);
             map.addMarker(new MarkerOptions().position(loc).icon(BitmapDescriptorFactory.fromBitmap(bigPictureBitmap)));
            // mClusterManger.addItem(new DangerPlace(loc));
