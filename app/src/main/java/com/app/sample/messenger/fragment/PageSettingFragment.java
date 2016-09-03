@@ -1,5 +1,6 @@
 package com.app.sample.messenger.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -44,12 +46,16 @@ public class PageSettingFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<Group> items = new ArrayList<>();
     private GroupsGridAdapter mAdapter;
+    private Color mColor;
+
+    private boolean Emergency ;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.page_fragment_recent, container, false);
 
+        mColor = new Color();
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500); //You can manage the time of the blink with this parameter
         anim.setStartOffset(20);
@@ -58,8 +64,37 @@ public class PageSettingFragment extends Fragment {
         anim.setBackgroundColor(0);
         view.findViewById(R.id.sprayImage).startAnimation(anim);
 //        myText.startAnimation(anim);
+        Emergency = false;
 
         return view;
+    }
+
+    public void actionClick(View v)
+    {
+
+        Button emrgencyButton = (Button) view.findViewById(R.id.emergency_button);
+        if(Emergency == false) {
+            emrgencyButton.setText("신고 취소하기");
+//            Animation anim = new AlphaAnimation(0.0f, 1.0f);
+//            anim.setDuration(1000); //You can manage the time of the blink with this parameter
+//            anim.setStartOffset(20);
+//            anim.setRepeatMode(Animation.REVERSE);
+//            anim.setRepeatCount(Animation.INFINITE);
+//            anim.setBackgroundColor(0);
+//            emrgencyButton.startAnimation(anim);
+
+            emrgencyButton.setBackgroundColor(Color.LTGRAY);
+            Emergency = true;
+        }
+        else
+        {
+            emrgencyButton.setText("신고하기");
+            emrgencyButton.clearAnimation();
+            //mColor = view;
+            emrgencyButton.setBackgroundResource(R.color.colorPrimary);
+            Emergency = false;
+        }
+
     }
 
 

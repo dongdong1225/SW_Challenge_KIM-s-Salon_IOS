@@ -295,7 +295,17 @@ public class ActivityMain extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void actionClick(View v) {
-        f_setting.actionClick(v);
+        if(v.getId() == R.id.emergency_button)
+        {
+            f_recent.actionClick(v);
+            Log.i("emerge","Clicked");
+        }
+        else
+        {
+            f_setting.actionClick(v);
+        }
+
+
     }
 
     @Override
