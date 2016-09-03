@@ -63,6 +63,21 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:textColor="@color/material_deep_teal_500" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_large" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "신고하기"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/background_floating_material_light"
+                android:onClick="actionClick"
+                android:clickable="true"
+                android:id="@+id/emergency_button"
+                />
+
         </LinearLayout>
 
     </LinearLayout>
